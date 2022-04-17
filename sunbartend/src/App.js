@@ -54,6 +54,9 @@ function App() {
 
   return (
     <div className="App">
+ 
+      <div class='box'>
+      <div>
       <Nav />
       <Routes>
         <Route path="/" element={<HomeRegister />} />
@@ -73,7 +76,12 @@ function App() {
           userid={userid}/>}
         />
         <Route path="/All" element={<EveryCity />} />
-      </Routes>
+        </Routes>
+        </div>
+  <div class='wave -one'></div>
+  <div class='wave -two'></div>
+  <div class='wave -three'></div>
+  </div>
     </div>
   );
 }
