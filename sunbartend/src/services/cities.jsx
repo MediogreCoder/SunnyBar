@@ -55,6 +55,24 @@ export const getUserCity = async (name) => {
   }
 };
 
+export const getUserName = async (name) => {
+  try {
+    const response = await api.get(`/users/name/${name}`);
+    return response.data.name;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getUserPassword = async (name) => {
+  try {
+    const response = await api.get(`/users/name/${name}`);
+    return response.data.password;
+  } catch (error) {
+    throw error;
+  }
+};
+
 
 export const registerUser = async (account) => {
   try {
