@@ -8,4 +8,46 @@
   padding: 10px;
 }
 
+/* .navBar{
+  display: none;
+} */
 
+.regContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+
+}
+
+.regForm{
+  display: flex;
+  flex-direction: column;
+}
+
+.loginContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.allCityContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.App{
+  padding: 20px;
+
+}
+
+Nav{
+  padding: 20px;
+}

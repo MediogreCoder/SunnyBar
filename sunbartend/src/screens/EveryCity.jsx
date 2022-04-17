@@ -28,7 +28,7 @@ export default function EveryCity() {
   };
    
   return (
-    <div>
+    <div class="allCityContainer">
       <div>
         <input type="text" onChange={(e) => capFirstLetter(e.target.value)} />
         <Link to="/profile">
@@ -36,10 +36,17 @@ export default function EveryCity() {
         </Link>
 
       </div>
+      <div>
+        <h1>
+          All Major Cities
+        </h1>
+      </div>
+      <div>
       {cities.map((cityData) => 
         cityData.City.includes(query) &&
         <Cities key={cityData._id} city={cityData}/>
-      )}
+        )}
+        </div>
      
     </div>
   )

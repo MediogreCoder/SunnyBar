@@ -42,26 +42,41 @@ export default function HomeRegister() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+
+    <div class="regContainer">
+      <div>
+        <h1>Sign up Now!</h1>
+      </div>
+      <div class="regForm">
+        
+        <form onSubmit={handleSubmit}>
+        <div>
       <input
         placeholder="Name"
         name="name"
         value={account.name}
         onChange={handleChange}
-      />
+            />
+            </div>
       <input
         placeholder="Password"
         name="password"
         value={account.password}
         onChange={handleChange}
-      />
+          />
+          <div>
       <input
         placeholder="city"
         name="city"
         value={account.city}
         onChange={handleChange}
-      />
-      <button type="submit">Submit</button>
-    </form>
+            />
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+            </div>
+      </form>
+      </div>
+      </div>
   )
 }
