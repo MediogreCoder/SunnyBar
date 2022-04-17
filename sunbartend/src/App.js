@@ -56,7 +56,7 @@ function App() {
     <div className="App">
  
       <div class='box'>
-      <div>
+      <div class="mainContent">
       <Nav />
       <Routes>
         <Route path="/" element={<HomeRegister />} />

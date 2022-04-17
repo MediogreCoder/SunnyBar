@@ -37,8 +37,8 @@ export default function HomeRegister() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const result = allUser.includes(account.name)
-    if (result === true) {
+    const userMatch = allUser.includes(account.name)
+    if (userMatch === true) {
       await registerUser(account)
       navigate("/login", { replace: true })
       console.log("registered")
