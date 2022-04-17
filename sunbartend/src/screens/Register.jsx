@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
@@ -59,7 +58,7 @@ export default function HomeRegister() {
         <form onSubmit={handleSubmit}>
         <div>
       <input
-        placeholder="Name"
+        placeholder="Username"
         name="name"
         value={account.name}
         onChange={handleChange}

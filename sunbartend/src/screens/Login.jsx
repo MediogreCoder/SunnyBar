@@ -15,7 +15,7 @@ export default function Login(props) {
           </div>
           <div>
       <label htmlFor="imageURL">Password</label>
-            <input type="text" id="imageURL" value={props.password} onChange={(e) => props.setPassword(e.target.value)} />
+            <input type="password" id="imageURL" value={props.password} onChange={(e) => props.setPassword(e.target.value)} />
           </div>
           <div>
         <button type="submit" onClick={() =>
