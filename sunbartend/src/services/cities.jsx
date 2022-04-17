@@ -82,3 +82,21 @@ export const registerUser = async (account) => {
     throw error;
   }
 };
+
+export const getUserID = async (name) => {
+  try {
+    const response = await api.get(`/users/name/${name}`);
+    return response.data._id;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteUser = async (id) => {
+  try {
+    const response = await api.delete(`/users/${id}`);
+    return response.data.id;
+  } catch (error) {
+    throw error;
+  }
+};

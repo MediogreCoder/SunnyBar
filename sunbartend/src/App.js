@@ -7,7 +7,7 @@ import Login from "./screens/Login";
 import Profile from "./screens/Profile";
 import EveryCity from "./screens/EveryCity"
 import { Routes, Route } from "react-router-dom";
-import { getUserCity, getUserName, getUserPassword } from "./services/cities";
+import { getUserCity, getUserName, getUserPassword, getUserID } from "./services/cities";
 import { useNavigate } from 'react-router';
 
 
@@ -15,7 +15,7 @@ function App() {
   const [userCity, setUserCity] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const [userid, setUserId] = useState("");
 
   let navigate = useNavigate()
 
@@ -25,33 +25,31 @@ function App() {
     const fetchUserCities = async () => {
       const uCity = await getUserCity(username);
       const uUser = await getUserName(username);
+      const uId = await getUserID(username);
       const uPass = await getUserPassword(username)
       if ((uUser === username) && (uPass === password)) {
         setUserCity(uCity)
+        setUserId(uId)
         navigate("/Profile", { replace: true })
       }
         else {
           alert("Incorrect Login")
         }
-   
-    console.log(uCity)
-    console.log(uPass)
-    console.log(uUser)
-    console.log(username)
+    // console.log(uId, userid)
+    // console.log(uCity)
+    // console.log(uPass)
+    // console.log(uUser)
+    // console.log(username)
     }
-    fetchUserCities()
-  
-     
-   
+    fetchUserCities()  
 }
 
   
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submitted")
-    // setUsername(username);
-    // setUsername('');
-    // setPassword('');
+    setUsername("")
+    setPassword("")
   }
 
   return (
@@ -65,14 +63,14 @@ function App() {
           setUserCity={setUserCity}
           logUserCity={logUserCity}
           handleSubmit={handleSubmit}
-          
+          userid={userid}
           username={username}
           password={password}
           userCity={userCity}
         />} />
         <Route path="/Profile" element={<Profile
           userCity={userCity}
-          logUserCity={logUserCity} />}
+          userid={userid}/>}
         />
         <Route path="/All" element={<EveryCity />} />
       </Routes>
