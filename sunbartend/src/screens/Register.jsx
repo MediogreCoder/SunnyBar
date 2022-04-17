@@ -4,9 +4,6 @@ import { useNavigate } from 'react-router';
 import { registerUser } from '../services/cities'
 
 export default function HomeRegister() {
-  // const [username, setUsername] = useState(" ");
-  // const [usercity, setUserCity] = useState(" ");
-  // const [password, setPassword] = useState(" ");
   const [account, setAccount] = useState({
     name: "",
     password: "",
@@ -30,16 +27,42 @@ export default function HomeRegister() {
     console.log("registered")
   }
 
-  return (
-    <div>
-      <h1>Sign up Now!</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder='Name' name="username" onChange={handleChange} />
-        <input type="text" placeholder='Password'name="pw"  onChange={handleChange}  />
-        <input type="text" placeholder='City' name="City" onChange={handleChange} />
-        <button type="submit">Register</button>
-        </form>
+  //   return (
+  //     <div>
+  //       <h1>Sign up Now!</h1>
+  //       <form onSubmit={handleSubmit}>
+  //         <input  placeholder='Name' value={account.name} name="username" onChange={handleChange} />
+  //         <input  placeholder='Password'name="pw" value={account.password}  onChange={handleChange}  />
+  //         <input placeholder='City' name="City" value={account.city} onChange={handleChange} />
+     
+  //           <button type="submit">Register</button>
+  //         </form>
       
-    </div>
+  //     </div>
+  //   )
+  // }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        placeholder="Name"
+        name="name"
+        value={account.name}
+        onChange={handleChange}
+      />
+      <input
+        placeholder="Password"
+        name="password"
+        value={account.password}
+        onChange={handleChange}
+      />
+      <input
+        placeholder="city"
+        name="city"
+        value={account.city}
+        onChange={handleChange}
+      />
+      <button type="submit">Submit</button>
+    </form>
   )
 }

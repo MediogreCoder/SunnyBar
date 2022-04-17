@@ -3,8 +3,8 @@ import axios from "axios";
 let apiUrl;
 
 const apiUrls = {
-  production: "https://sunlightbycities-api.herokuapp.com/sunlight",
-  development: "http://localhost:9000/sunlight",
+  production: "https://sunnybartender.herokuapp.com/team/",
+  development: "https://sunnybartender.herokuapp.com/team/",
 };
 
 if (window.location.hostname === "localhost") {

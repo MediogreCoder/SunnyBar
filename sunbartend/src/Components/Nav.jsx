@@ -9,6 +9,8 @@ export default function Nav() {
         <div>
           <NavLink to="/login">Login</NavLink>
           <NavLink to="/Profile">Profile</NavLink>
+          <NavLink to="/All">All Cities</NavLink>
+
         </div>
       </div>
     </nav>

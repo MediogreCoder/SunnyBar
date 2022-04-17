@@ -1,8 +1,18 @@
 import api from "./apiConfig";
 
+
 export const getAll = async () => {
   try {
-    const response = await api.get("/");
+    const response = await api.get("/sunlights");
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getAllUsers = async () => {
+  try {
+    const response = await api.get("/team/users");
     return response.data;
   } catch (error) {
     throw error;
@@ -11,7 +21,7 @@ export const getAll = async () => {
 
 export const getProfileCity = async (City) => {
   try {
-    const response = await api.get(`/cityname/${City}`);
+    const response = await api.get(`/sunlights/city/${City}`);
     return response.data.City;
   } catch (error) {
     throw error;
@@ -20,7 +30,7 @@ export const getProfileCity = async (City) => {
 
 export const getProfileSunlight = async (City) => {
   try {
-    const response = await api.get(`/cityname/${City}`);
+    const response = await api.get(`/sunlights/city/${City}`);
     return response.data.Year;
   } catch (error) {
     throw error;
@@ -29,7 +39,7 @@ export const getProfileSunlight = async (City) => {
 
 export const getUser = async (name) => {
   try {
-    const response = await api.get(`/user/${name}`);
+    const response = await api.get(`/users/${name}`);
     return response.data.name;
   } catch (error) {
     throw error;
@@ -38,7 +48,7 @@ export const getUser = async (name) => {
 
 export const getUserCity = async (name) => {
   try {
-    const response = await api.get(`/user/${name}`);
+    const response = await api.get(`/users/name/${name}`);
     return response.data.city;
   } catch (error) {
     throw error;
@@ -46,9 +56,9 @@ export const getUserCity = async (name) => {
 };
 
 
-export const registerUser = async (user) => {
+export const registerUser = async (account) => {
   try {
-    const response = await api.post("/user", user);
+    const response = await api.post("/users", account);
     return response.data;
   } catch (error) {
     throw error;
