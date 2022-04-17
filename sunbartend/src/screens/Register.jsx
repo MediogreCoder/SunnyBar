@@ -1,8 +1,9 @@
+
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { registerUser } from '../services/cities'
-import { getAll } from '../services/cities'
+import { getAllUsers } from '../services/cities'
 
 export default function HomeRegister() {
   const [account, setAccount] = useState({
@@ -11,18 +12,19 @@ export default function HomeRegister() {
     city: "",
   })
 
-  const [allCity, setAllCity] = useState([])
+  const [allUser, setAllUsers] = useState([])
 
   useEffect(() => {
-    const fetchCities = async () => {
-      const AllCities = await getAll()
-      console.log(AllCities)
-      setAllCity(AllCities)
+    const fetchUsers = async () => {
+      const AllUsers = await getAllUsers()
+      console.log(AllUsers)
+      setAllUsers(AllUsers)
     }
   
-    fetchCities()
+    fetchUsers()
 }, [])
 
+  
 
   let navigate = useNavigate()
 
@@ -36,9 +38,14 @@ export default function HomeRegister() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await registerUser(account)
-    navigate("/login", { replace: true })
-    console.log("registered")
+    const result = allUser.includes(account.name)
+    if (result === true) {
+      await registerUser(account)
+      navigate("/login", { replace: true })
+      console.log("registered")
+    } else {
+      alert("This user already exist")
+    }
   }
 
   return (

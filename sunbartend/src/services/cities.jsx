@@ -12,7 +12,7 @@ export const getAll = async () => {
 
 export const getAllUsers = async () => {
   try {
-    const response = await api.get("/team/users");
+    const response = await api.get("/users");
     return response.data;
   } catch (error) {
     throw error;
