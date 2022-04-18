@@ -57,7 +57,7 @@ function App() {
 
   return (
     <div className="App">
- 
+  <img src="Sunnyscore-logos_white.png" class="logo"/>
       <div class='box'>
       <div class="mainContent">
       <Nav />
@@ -87,9 +87,6 @@ function App() {
             />} />
         </Routes>
         </div>
-  <div class='wave -one'></div>
-  <div class='wave -two'></div>
-  <div class='wave -three'></div>
   </div>
     </div>
   );

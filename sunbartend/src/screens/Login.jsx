@@ -9,7 +9,7 @@ export default function Login(props) {
     <div class="loginContainer">
 
     <div>
-     <h1>Login</h1>
+        <h1>Login</h1>
    </div>
    <div>
      <form onSubmit={props.handleSubmit}>

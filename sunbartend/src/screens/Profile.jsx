@@ -7,7 +7,7 @@ import LoggedUser from "./loggedUsers";
 
 
 
-export default function LandingPage(props) {
+export default function LandingPage(props) { 
   const [cities, setCities] = useState([]);
   const [sunlight, setSunlight] = useState("");
   const profileCity = props.userCity
@@ -41,8 +41,12 @@ export default function LandingPage(props) {
 }
    
   return (
-    <div>
+  <div>
       
+      <div>
+          <LoggedUser user={user} />
+        </div>
+
     <div>
      <h1>City</h1> 
      <div className="info">{cities}</div> 
@@ -57,10 +61,9 @@ export default function LandingPage(props) {
         <p class="text">Your Sunnyscore is: <span class="scoreDisplay">{sunlight}</span></p>
   
     <div class="slidercontainer">
-
       <input type="range" min="300" max="5000" value={sunlight} id="slider"></input>
-      </div>
-      </div>
+    </div>
+  </div>
   
 
       <Link to="/All">
@@ -81,11 +84,7 @@ See how your city compares!
       </div>
 
 
-
-
-
-
-      <div class='rightbox'>
+  <div class='rightbox'>
     <div class='rightwave -one'></div>
     <div class='rightwave -two'></div>
     <div class='rightwave -three'></div>
@@ -101,7 +100,9 @@ See how your city compares!
     <div class='centerwave -one'></div>
     <div class='centerwave -two'></div>
     <div class='centerwave -three'></div>
-  </div>
+  
+      
+      </div>
     </div>
     
     

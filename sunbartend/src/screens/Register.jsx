@@ -62,7 +62,7 @@ export default function HomeRegister(props) {
       </div>
       <div class="regForm">
         
-        <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
         <div>
       <input
         placeholder="Username"
@@ -79,24 +79,19 @@ export default function HomeRegister(props) {
           />
           <div>
       <input
-        placeholder="city"
+        placeholder="City"
         name="city"
         value={account.city}
         onChange={handleChange}
             />
         </div>
         <div>
-            <button type="submit">Submit</button>
-            </div>
+          <button type="submit">Submit</button>
+        </div>
       </form>
       </div>
 
-
-
-      
-
-
-      <div class='rightbox'>
+  <div class='rightbox'>
     <div class='rightwave -one'></div>
     <div class='rightwave -two'></div>
     <div class='rightwave -three'></div>

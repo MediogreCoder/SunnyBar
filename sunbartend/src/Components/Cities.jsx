@@ -7,6 +7,7 @@ export default function Cities({ city }) {
       <div class="cityName">
         <h2>{city.City}</h2>
       </div>
+      <p> ~☀️~ </p>
       <div class="cityYear">
         <h2>{city.Year}</h2>
         </div>
