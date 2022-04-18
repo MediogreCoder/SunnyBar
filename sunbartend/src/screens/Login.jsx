@@ -1,9 +1,15 @@
 import React from 'react'
-export default function Login(props) {
 
+import LoggedUser from './loggedUsers';
+
+export default function Login(props) {
+  const user = props.holdname
 
   return (
     <div class="loginContainer">
+        <div>
+       <LoggedUser user={user}  />
+      </div>
        <div>
         <h1>Login</h1>
       </div>

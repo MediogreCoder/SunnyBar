@@ -3,17 +3,20 @@ import { useState, useEffect} from "react";
 import { getAll } from "../services/cities";
 import Cities from "../Components/Cities";
 import { Link } from "react-router-dom";
+import LoggedUser from "./loggedUsers";
 
 
-export default function EveryCity() {
+export default function EveryCity(props) {
   const [cities, setCities] = useState([]);
   const [query, setQuery] = useState("");
+  const user = props.holdname
 
   useEffect(() => {
       const fetchCities = async () => {
         const AllCities = await getAll()
         console.log(AllCities)
         setCities(AllCities)
+        console.log(user)
         
       }
     
@@ -37,6 +40,11 @@ export default function EveryCity() {
 
       </div>
       <div>
+      <h2>Logge in as: </h2>
+       <LoggedUser user={user}  />
+      </div>
+     
+      <div>
         <h1>
           All Major Cities
         </h1>
@@ -47,7 +55,6 @@ export default function EveryCity() {
         <Cities key={cityData._id} city={cityData}/>
         )}
         </div>
-     
     </div>
   )
 }

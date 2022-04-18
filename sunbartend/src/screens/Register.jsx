@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { registerUser } from '../services/cities'
 import { getAllUsers } from '../services/cities'
+import LoggedUser from './loggedUsers';
 
-export default function HomeRegister() {
+export default function HomeRegister(props) {
+  const user = props.holdname
+
   const [account, setAccount] = useState({
     name: "",
     password: "",
@@ -38,6 +41,7 @@ export default function HomeRegister() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const userMatch = allUser.find(user => {
+      console.log(user.name)
       return user.name === account.name
     })
     if (!userMatch) {
@@ -52,6 +56,9 @@ export default function HomeRegister() {
   return (
 
     <div class="regContainer">
+        <div>
+       <LoggedUser user={user}  />
+      </div>
       <div>
         <h1>Sign up Now!</h1>
       </div>

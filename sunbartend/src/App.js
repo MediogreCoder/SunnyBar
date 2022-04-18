@@ -16,6 +16,7 @@ function App() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [userid, setUserId] = useState("");
+  const [holdname, setHoldName] = useState("");
 
   let navigate = useNavigate()
 
@@ -30,6 +31,7 @@ function App() {
       if ((uUser === username) && (uPass === password)) {
         setUserCity(uCity)
         setUserId(uId)
+       
         navigate("/Profile", { replace: true })
       }
         else {
@@ -42,6 +44,7 @@ function App() {
     // console.log(username)
     }
     fetchUserCities()  
+    setHoldName(username)
 }
 
   
@@ -59,7 +62,8 @@ function App() {
       <div class="mainContent">
       <Nav />
       <Routes>
-        <Route path="/" element={<HomeRegister />} />
+        <Route path="/" element={<HomeRegister
+        holdname={holdname}     />} />
         <Route path="/login" element={<Login
           setUsername={setUsername}
           setPassword={setPassword}
@@ -69,13 +73,18 @@ function App() {
           userid={userid}
           username={username}
           password={password}
-          userCity={userCity}
+              userCity={userCity}
+              holdname={holdname} 
         />} />
         <Route path="/Profile" element={<Profile
-          userCity={userCity}
-          userid={userid}/>}
+              userCity={userCity}
+              holdname={holdname} 
+              userid={userid} />}
+              
         />
-        <Route path="/All" element={<EveryCity />} />
+            <Route path="/All" element={<EveryCity
+              holdname={holdname} 
+            />} />
         </Routes>
         </div>
   <div class='wave -one'></div>

@@ -3,7 +3,7 @@ import { useState, useEffect} from "react";
 import { getProfileCity, getProfileSunlight, deleteUser } from "../services/cities";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router';
-
+import LoggedUser from "./loggedUsers";
 
 
 
@@ -12,7 +12,7 @@ export default function LandingPage(props) {
   const [sunlight, setSunlight] = useState("");
   const profileCity = props.userCity
   const UserUniqueId = props.userid
-  
+  const user = props.holdname
 
 
   useEffect(() => {
@@ -42,6 +42,9 @@ export default function LandingPage(props) {
    
   return (
     <div>
+        <div>
+       <LoggedUser user={user}  />
+      </div>
       <div>
         <button onClick={logOut}>
           Logout
