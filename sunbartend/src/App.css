@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.navBar{
+  position: absolute;
+}
+
+.scoreDisplay {
+text-decoration: underline;
+}
+
+.citiesContainer{
+  column-count: 3;
+}
+
 .cityInfoDiv {
   display: flex;
   flex-direction: row;
@@ -49,72 +61,220 @@ Nav{
   padding: 20px;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  font-family: Quicksand;
+button {
+  border-radius: 12px;
 }
+
+input {
+  border-radius: 5px;
+}
+  .regContainer{
+    z-index: 99 !important;;
+  }
 
 body {
-  background: #f3f2ef;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  background: #9ab9d0;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  text-align: center;
+  
 }
-
-html,
-body {
-  height: 100%;
-}
-
-html {
-  background: #eee;
+.logo {
+  width: 60%;
 }
 
 .box {
-  width: 20vw;
-  height: 60vh;
-  border-radius: 5px;
-  box-shadow: 0 2px 30px rgba(black, 0.2);
-  background: lightskyblue;
-  position: relative;
-  overflow: hidden;
-  transform: translate3d(0, 0, 0);
-  min-width: 100%;
-  min-height: 100%;
+  display: inline;
+}
+.textbox {
+  margin: auto;
+  border: white solid;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.text {
+  font-size: 3rem;
+}
+.tag {
+  font-size: 2rem;
+}
+.info {
+  width: 80%;
+  font-size: 1.5rem;
+  display: inline;
 }
 
-.wave {
-  opacity: 0.3;
-  position: absolute;
-  top: 120%;
-  left: 100%;
+#slider {
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+  -webkit-appearance: none;
+  height: 30px;
+  width: 80%;
+  border-radius: 30px;
+  background-image: linear-gradient(to left, #f0ba78, #02173b);
+  opacity: 1;
+}
+#slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 70px;
+  height: 70px;
+  border-radius: 90px;
+}
+#slider::-webkit-slider-thumb{
   background: white;
-  width: 900px;
-  height: 800px;
-  margin-left: -250px;
+}
+
+.slidercontainer {
+  display: flex;
+  display: block;
+}
+
+
+.rightbox {
+  display: block;
+  width: 100vw;
+  height: 60vh;
+  background: darken(#eff3f9,20%);
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.rightwave {
+  opacity: 1;
+  position: absolute;
+  top: 100%;
+  right: -10%;
+  background: white;
+  width: 500px;
+  height: 500px;
   margin-top: -250px;
   transform-origin: 50% 48%;
   border-radius: 43%;
-  animation: drift 7000ms infinite linear;
+  animation: drift 3000ms infinite linear;
   z-index: 1;
 }
 
-.wave.-three {
-  animation: drift 8000ms infinite linear;
+.rightwave.-three {
+  animation: drift 5000ms infinite linear;
   z-index: 2 !important;
   opacity: 0.2;
 }
 
-.wave.-two {
-  animation: drift 9000ms infinite linear;
+.rightwave.-two {
+  animation: drift 7000ms infinite linear;
   opacity: 0.1;
   z-index: 3 !important;
 }
 
+.leftwave {
+  opacity: 1;
+  position: absolute;
+  top: 100%;
+  left: -10%;
+  background: white;
+  width: 500px;
+  height: 500px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+  z-index: 1;
+}
 
+.leftwave.-three {
+  animation: drift 5000ms infinite linear;
+  z-index: 2 !important;
+  opacity: 0.2;
+}
 
+.leftwave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: 0.1;
+  z-index: 3 !important;
+}
+
+.centerRightwave {
+  opacity: 1;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  background: white;
+  width: 500px;
+  height: 500px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+  z-index: 1;
+}
+
+.centerRightwave.-three {
+  animation: drift 5000ms infinite linear;
+  z-index: 2 !important;
+  opacity: 0.2;
+}
+
+.centerRightwave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: 0.1;
+  z-index: 3 !important;
+}
+
+.centerLeftwave {
+  opacity: 1;
+  position: absolute;
+  top: 120%;
+  right: 50%;
+  background: white;
+  width: 500px;
+  height: 500px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+  z-index: 1;
+}
+
+.centerLeftwave.-three {
+  animation: drift 5000ms infinite linear;
+  z-index: 2 !important;
+  opacity: 0.2;
+}
+
+.centerLeftwave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: 0.1;
+  z-index: 3 !important;
+}
+
+.centerwave {
+  opacity: 1;
+  position: absolute;
+  top: 130%;
+  right: 30%;
+  background: white;
+  width: 500px;
+  height: 500px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+  z-index: 1;
+}
+
+.centerwave.-three {
+  animation: drift 5000ms infinite linear;
+  z-index: 2 !important;
+  opacity: 0.2;
+}
+
+.centerwave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: 0.1;
+  z-index: 3 !important;
+}
 @keyframes drift {
   from {
     transform: rotate(0deg);
@@ -124,10 +284,14 @@ html {
   }
 }
 
-  .wave {
-    top: 85%;
-  }
 
-  .regContainer{
-    z-index: 99 !important;;
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
   }
+  .citiesContainer{
+    column-count: 1;
+  }
+}

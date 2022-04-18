@@ -56,9 +56,7 @@ export default function HomeRegister(props) {
   return (
 
     <div class="regContainer">
-        <div>
-       <LoggedUser user={user}  />
-      </div>
+
       <div>
         <h1>Sign up Now!</h1>
       </div>
@@ -92,6 +90,29 @@ export default function HomeRegister(props) {
             </div>
       </form>
       </div>
+
+
+
+      
+
+
+      <div class='rightbox'>
+    <div class='rightwave -one'></div>
+    <div class='rightwave -two'></div>
+    <div class='rightwave -three'></div>
+    <div class='leftwave -one'></div>
+    <div class='leftwave -two'></div>
+    <div class='leftwave -three'></div>  
+    <div class='centerRightwave -one'></div>
+    <div class='centerRightwave -two'></div>
+    <div class='centerRightwave -three'></div>
+    <div class='centerLeftwave -one'></div>
+    <div class='centerLeftwave -two'></div>
+    <div class='centerLeftwave -three'></div>
+    <div class='centerwave -one'></div>
+    <div class='centerwave -two'></div>
+    <div class='centerwave -three'></div>
+  </div>
       </div>
   )
 }

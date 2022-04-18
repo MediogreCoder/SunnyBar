@@ -32,29 +32,48 @@ export default function EveryCity(props) {
    
   return (
     <div class="allCityContainer">
-      <div>
-        <input type="text" onChange={(e) => capFirstLetter(e.target.value)} />
-        <Link to="/profile">
-        <button type="submit">Back to Profile</button>
-        </Link>
 
-      </div>
-      <div>
-      <h2>Logge in as: </h2>
-       <LoggedUser user={user}  />
-      </div>
-     
-      <div>
-        <h1>
-          All Major Cities
-        </h1>
-      </div>
-      <div>
-      {cities.map((cityData) => 
-        cityData.City.includes(query) &&
-        <Cities key={cityData._id} city={cityData}/>
-        )}
-        </div>
+
+    <div>
+      <input type="text" placeholder="Search for your City!" onChange={(e) => capFirstLetter(e.target.value)} />
+      <Link to="/profile">
+      </Link>
+
     </div>
-  )
+    <div>
+      <h1>
+        Major Cities' Annual Sun Exposure
+      </h1>
+    </div>
+    <div class="citiesContainer">
+      {cities.map((cityData) =>
+        cityData.City.includes(query) &&
+        <Cities key={cityData._id} city={cityData} />
+      )}
+    </div>
+   
+    
+
+
+
+    <div class='rightbox'>
+      <div class='rightwave -one'></div>
+      <div class='rightwave -two'></div>
+      <div class='rightwave -three'></div>
+      <div class='leftwave -one'></div>
+      <div class='leftwave -two'></div>
+      <div class='leftwave -three'></div>
+      <div class='centerRightwave -one'></div>
+      <div class='centerRightwave -two'></div>
+      <div class='centerRightwave -three'></div>
+      <div class='centerLeftwave -one'></div>
+      <div class='centerLeftwave -two'></div>
+      <div class='centerLeftwave -three'></div>
+      <div class='centerwave -one'></div>
+      <div class='centerwave -two'></div>
+      <div class='centerwave -three'></div>
+    </div>
+    
+  </div>
+)
 }
