@@ -2,6 +2,7 @@
   text-align: center;
   text-decoration: none;
 }
+
 .navBar{
   display: flex;
   justify-content: space-around;
@@ -79,6 +80,8 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   color: white;
   text-align: center;
+  text-shadow:  1px 2px  rgb(60 64 67 / 30%);
+
   
 }
 
