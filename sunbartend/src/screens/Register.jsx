@@ -71,7 +71,8 @@ export default function HomeRegister(props) {
         onChange={handleChange}
             />
             </div>
-      <input
+        <input
+        type="password"
         placeholder="Password"
         name="password"
         value={account.password}

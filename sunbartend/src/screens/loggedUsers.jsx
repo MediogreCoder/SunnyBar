@@ -18,7 +18,7 @@ export default function LoggedUser(props) {
 }, [])
 
   return (
-    <div>
+    <div class="loginDisplay">
     <h1>Logged in as</h1>
       <h1>{currentuser}</h1>
       </div>
