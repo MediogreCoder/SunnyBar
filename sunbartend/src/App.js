@@ -1,26 +1,52 @@
 import "./App.css";
-import React from "react";
+import React, { useEffect } from "react";
 import {useState} from "react"
 import Nav from "./Components/Nav";
 import HomeRegister from "./screens/Register";
 import Login from "./screens/Login";
 import Profile from "./screens/Profile";
 import EveryCity from "./screens/EveryCity"
+import SingleCity from "./screens/Single"
 import { Routes, Route } from "react-router-dom";
-import { getUserCity, getUserName, getUserPassword, getUserID } from "./services/cities";
+import { getUserCity, getUserName, getUserPassword, getUserID, getAll } from "./services/cities";
 import { useNavigate } from 'react-router';
 
 
 function App() {
+//Global States-----------------------------------
+//user Information 
   const [userCity, setUserCity] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [userid, setUserId] = useState("");
   const [holdname, setHoldName] = useState("");
+//holds city info 
+  const [allCity, setAllCity] = useState([]);
+  const [onecity, setOneCity] = useState('');
 
-  let navigate = useNavigate()
+//fetch all cities
+  
 
-  const logUserCity = () => {
+useEffect(() => {
+  const fetchAll = async () => {
+    const AllCities = await getAll()
+    console.log(AllCities)
+    setAllCity(AllCities)
+  }
+
+  fetchAll()
+}, [])
+  
+
+//-------------------------------------------------
+
+//Navigation Variable  
+let navigate = useNavigate()
+
+//------------------------------------------------
+
+//Called when logging in to pull users cities and set city information
+const logUserCity = () => {
     console.log("clicked")
 
     const fetchUserCities = async () => {
@@ -37,16 +63,12 @@ function App() {
         else {
           alert("Incorrect Login")
         }
-    // console.log(uId, userid)
-    // console.log(uCity)
-    // console.log(uPass)
-    // console.log(uUser)
-    // console.log(username)
     }
     fetchUserCities()  
     setHoldName(username)
 }
 
+//Empties login form
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,6 +76,7 @@ function App() {
     setUsername("")
     setPassword("")
   }
+
 
   return (
     <div className="App">
@@ -84,7 +107,13 @@ function App() {
         />
             <Route path="/All" element={<EveryCity
               holdname={holdname} 
+              setOneCity={setOneCity}
+              allCity={allCity}
             />} />
+              <Route path="/Single" element={<SingleCity
+              onecity={onecity}
+        />}   
+          />
         </Routes>
         </div>
   </div>

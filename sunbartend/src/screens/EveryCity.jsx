@@ -10,14 +10,14 @@ export default function EveryCity(props) {
   const [cities, setCities] = useState([]);
   const [query, setQuery] = useState("");
   const user = props.holdname
+  const AllCities = props.allCity
+  const OneCity = props.onecity
+  const SetSingleCity = props.setOneCity
 
   useEffect(() => {
       const fetchCities = async () => {
-        const AllCities = await getAll()
-        console.log(AllCities)
         setCities(AllCities)
-        console.log(user)
-        
+        // console.log(AllCities)
       }
     
       fetchCities()
@@ -49,7 +49,7 @@ export default function EveryCity(props) {
     <div class="citiesContainer">
       {cities.map((cityData) =>
         cityData.City.includes(query) &&
-        <Cities key={cityData._id} city={cityData} />
+        <Cities key={cityData._id} city={cityData} OneCity={OneCity} SetSingleCity={SetSingleCity} />
       )}
     </div>
     </div>

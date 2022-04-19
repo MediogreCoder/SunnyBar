@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  text-decoration: none;
 }
 .navBar{
   display: flex;
@@ -478,3 +479,9 @@ body {
   font-size: .5rem;
   }
 }
+
+.allCityName{
+  text-decoration: none;
+  color: white;
+}
+
