@@ -147,6 +147,9 @@ body {
   background: darken(#eff3f9,20%);
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+  position: absolute;
+  bottom: 0;
+  left:0;
 }
 .rightwave {
   opacity: 1;

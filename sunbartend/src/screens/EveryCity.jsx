@@ -55,9 +55,7 @@ export default function EveryCity(props) {
     </div>
     
 
-
-
-    <div class='rightbox'>
+    <div class='rightbox' style={{ position: 'static'}}>
       <div class='rightwave -one'></div>
       <div class='rightwave -two'></div>
       <div class='rightwave -three'></div>
