@@ -156,11 +156,6 @@ body {
   position: absolute;
   bottom: 0;
   left:0;
-  transition-duration: 1s;
-}
-
-.rightbox:hover{
-  transform: scale(1.5);
 }
 
 
@@ -304,7 +299,15 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  transition-duration: 1s;
 }
+
+.sun:hover{
+  transform: scale(1.5);
+}
+
+
+
 .face {
   position: absolute;
   top: 6rem;

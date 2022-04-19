@@ -51,7 +51,23 @@ export default function Login(props) {
  <div class='centerwave -two'></div>
  <div class='centerwave -three'></div>
    </div>
-   
+   {/* <div class="sun">
+  <div class="rays">
+    <div class="ray1"></div>
+    <riv class="ray2"></riv>
+    <div class="ray3"></div>
+    <div class="ray4"></div>
+  </div>
+<div class="head">
+  <div class="face face__happy" id="happy">
+    <div class="eye-left"></div>
+    <div class="blushRight"></div>
+    <div class="eye-right"></div>
+    <div class="blushLeft"></div>
+    <div class="mouth"></div>
+  </div>
+        </div>
+        </div> */}
    </div>
 );
 }
