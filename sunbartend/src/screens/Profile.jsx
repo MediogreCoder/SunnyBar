@@ -44,7 +44,10 @@ export default function LandingPage(props) {
   <div>
       
       <div class="loggedUser">
-          <LoggedUser user={user} />
+      <button onClick={deleteAccount} >Delete Account</button>
+        <button onClick={logOut} >Logout</button>
+        <LoggedUser user={user} />
+
         </div>
 
      <h1 className="cityTitle">{cities}</h1> 

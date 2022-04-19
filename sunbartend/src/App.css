@@ -65,6 +65,12 @@ button {
   font-size: 1.5vw;
   opacity: .7;
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  transition-duration: 1s;
+}
+
+
+button:hover {
+  transform: scale(1.1) perspective(1px)
 }
 
 input {
@@ -150,7 +156,15 @@ body {
   position: absolute;
   bottom: 0;
   left:0;
+  transition-duration: 1s;
 }
+
+.rightbox:hover{
+  transform: scale(1.5);
+}
+
+
+
 .rightwave {
   opacity: 1;
   position: absolute;
