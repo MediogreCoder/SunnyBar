@@ -48,7 +48,7 @@ export default function EveryCity(props) {
       <div class="citiesContainerContainer">
     <div class="citiesContainer">
       {cities.map((cityData) =>
-        cityData.City.includes(query) &&
+        ((cityData.City.includes(query)) || (cityData.Year.toString().includes(query))) &&
         <Cities key={cityData._id} city={cityData} OneCity={OneCity} SetSingleCity={SetSingleCity} />
       )}
     </div>
