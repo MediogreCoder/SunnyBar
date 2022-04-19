@@ -43,18 +43,11 @@ export default function LandingPage(props) {
   return (
   <div>
       
-      <div>
+      <div class="loggedUser">
           <LoggedUser user={user} />
         </div>
 
-    <div>
-     <h1>City</h1> 
-     <div className="info">{cities}</div> 
-      </div>
-      <div>
-        <h1>Sunlight</h1> 
-        <div className="info">{sunlight}</div> 
-      </div>
+     <h1 className="cityTitle">{cities}</h1> 
 
       <div>
 
@@ -66,22 +59,7 @@ export default function LandingPage(props) {
   </div>
   
 
-      <Link to="/All">
-      <button>
-See how your city compares!
-        </button>
-      </Link>
-      <div>
-
-        <button onClick={logOut}>
-          Logout
-        </button>
-      </div>
-      <div>
-        <button onClick={deleteAccount}>
-          Delete Account
-        </button>
-      </div>
+        
 
 
   <div class='rightbox'>
@@ -99,11 +77,27 @@ See how your city compares!
     <div class='centerLeftwave -three'></div>
     <div class='centerwave -one'></div>
     <div class='centerwave -two'></div>
-    <div class='centerwave -three'></div>
-  
-      
+        <div class='centerwave -three'></div>
+        <div class="sun">
+  <div class="rays">
+    <div class="ray1"></div>
+    <riv class="ray2"></riv>
+    <div class="ray3"></div>
+    <div class="ray4"></div>
+  </div>
+<div class="head">
+  <div class="face face__happy" id="happy">
+    <div class="eye-left"></div>
+    <div class="blushRight"></div>
+    <div class="eye-right"></div>
+    <div class="blushLeft"></div>
+    <div class="mouth"></div>
+  </div>
+        </div>
+        </div>
+   </div>
+        
       </div>
-    </div>
     
     
   )

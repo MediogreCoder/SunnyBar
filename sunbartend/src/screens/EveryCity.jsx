@@ -44,14 +44,15 @@ export default function EveryCity(props) {
       <h1>
         Major Cities' Annual Sun Exposure
       </h1>
-    </div>
+      </div>
+      <div class="citiesContainerContainer">
     <div class="citiesContainer">
       {cities.map((cityData) =>
         cityData.City.includes(query) &&
         <Cities key={cityData._id} city={cityData} />
       )}
     </div>
-   
+    </div>
     
 
 

@@ -4,15 +4,26 @@ import { NavLink } from 'react-router-dom';
 export default function Nav() {
   return (
     <nav class="navBar">
-      <div>
-        <NavLink style={{ textDecoration: 'none' }} class="NavLink" to="/"> ☀️Register☀️ </NavLink>
-        <div>
-          <NavLink style={{ textDecoration: 'none' }} to="/login">Login ☀️ </NavLink>
-          <NavLink style={{ textDecoration: 'none' }} to="/Profile">Profile ☀️ </NavLink>
-          <NavLink style={{ textDecoration: 'none' }} to="/All">All Cities</NavLink>
-
-        </div>
-      </div>
+        <NavLink  class="NavLink" to="/">
+          <button class="navButton">
+            Register
+          </button>
+        </NavLink>
+          <NavLink  to="/login">
+          <button class="navButton">
+            Login
+          </button>
+          </NavLink>
+          <NavLink  to="/Profile">
+          <button class="navButton">
+            SunnyScore
+          </button>
+          </NavLink>
+          <NavLink  to="/All">
+          <button class="navButton">
+            All Cities
+          </button>
+          </NavLink>
     </nav>
   )
 }
