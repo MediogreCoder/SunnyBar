@@ -4,6 +4,7 @@ import LoggedUser from './loggedUsers';
 
 export default function Login(props) {
   const user = props.holdname
+  const loginbox =props.loginbox
 
   return (
     <div class="loginContainer">
@@ -22,7 +23,8 @@ export default function Login(props) {
        <div>
      <button type="submit" onClick={() =>
      {
-       props.logUserCity()
+              props.logUserCity()
+              props.loginbox()
          }}>Login</button>
          </div>
      </form>
