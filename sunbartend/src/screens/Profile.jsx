@@ -8,22 +8,29 @@ import LoggedUser from "./loggedUsers";
 
 
 export default function LandingPage(props) { 
-  const [cities, setCities] = useState([]);
-  const [sunlight, setSunlight] = useState("");
+ const logOut = props.logOut
+ const setSunlight = props.setSunlight
+  const setCities = props.setCities
+  const cities = props.cities
+  const showbox = props.showbox
+  const sunlight = props.sunlight
   const profileCity = props.userCity
   const UserUniqueId = props.userid
   const user = props.holdname
 
+  
 
   useEffect(() => {
     const fetchCities = async () => {
-      console.log( profileCity, sunlight, UserUniqueId )
+
       const uCity = await getProfileCity( profileCity )
       const sunCity = await getProfileSunlight(profileCity)
       setCities(uCity)
       setSunlight(sunCity)
+     
   
-      }
+    }
+     
       fetchCities()
   }, [profileCity])
   
@@ -34,16 +41,12 @@ export default function LandingPage(props) {
     navigate("/", { replace: true })
   }
 
-  function logOut() {
-    setCities("")
-    setSunlight("")
-    navigate("/login", { replace: true })
-}
+
    
   return (
   <div>
       
-      <div class="loggedUser">
+      <div class="loggedUser" style={{ display: `${showbox}` }} >
       <button onClick={deleteAccount} >Delete Account</button>
         <button onClick={logOut} >Logout</button>
         <LoggedUser user={user} />

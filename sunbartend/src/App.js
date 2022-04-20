@@ -12,6 +12,7 @@ import { getUserCity, getUserName, getUserPassword, getUserID, getAll } from "./
 import { useNavigate } from 'react-router';
 
 
+
 function App() {
 //Global States-----------------------------------
 //user Information 
@@ -26,6 +27,11 @@ function App() {
   const [allcityname, setAllCityName] = useState([]);
 //fetch all cities
   const allcity = []
+//holds profile states
+  const [cities, setCities] = useState([]);
+  const [sunlight, setSunlight] = useState('');
+  const [showbox, setShowBox] = useState('')
+  
 
 useEffect(() => {
   const fetchAll = async () => {
@@ -77,6 +83,8 @@ const logUserCity = () => {
 
 //Empties login form
   
+  
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submitted")
@@ -84,6 +92,17 @@ const logUserCity = () => {
     setPassword("")
   }
 
+  function logOut() {
+    setCities("")
+    setSunlight("")
+    setUserCity("")
+    setShowBox("none")
+    navigate("/login", { replace: true })
+}
+
+  function loginbox() {
+    setShowBox("block")
+  }
 
   return (
     <div className="App">
@@ -107,11 +126,18 @@ const logUserCity = () => {
           username={username}
           password={password}
               userCity={userCity}
-              holdname={holdname} 
+              holdname={holdname}
+              loginbox={loginbox}
         />} />
         <Route path="/Profile" element={<Profile
               userCity={userCity}
-              holdname={holdname} 
+              holdname={holdname}
+              setCities={setCities}
+              setSunlight={setSunlight}
+              logOut={logOut}
+              cities={cities}
+              showbox={showbox}
+              sunlight={sunlight}
               userid={userid} />}
               
         />
