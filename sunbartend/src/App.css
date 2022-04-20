@@ -41,6 +41,7 @@ z-index: 100;
 .regForm{
   display: flex;
   flex-direction: column;
+  z-index: 100;
 }
 
 .loginContainer{
@@ -162,8 +163,6 @@ body {
   bottom: 0;
   left:0;
 }
-
-
 
 .rightwave {
   opacity: 1;
