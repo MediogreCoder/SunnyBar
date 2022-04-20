@@ -7,7 +7,7 @@ A website to check the amount of sunlight your city is exposed to annually and a
 
 Register as a new user, input your name, password, and city. Login to validate your registration... Enjoy your SunnyScore and meet SunnyBoi.
 
-Navgiate to All Cities to view other Major Cities and their Sunnscore.
+Navgiate to All Cities to view other Major Cities and their Sunnyscore.
 
 # Full CRUD
 
