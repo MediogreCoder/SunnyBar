@@ -7,6 +7,7 @@ import LoggedUser from './loggedUsers';
 
 export default function HomeRegister(props) {
   const user = props.holdname
+  const cityObjectDrop = props.allCity
 
   const [account, setAccount] = useState({
     name: "",
@@ -19,7 +20,6 @@ export default function HomeRegister(props) {
   useEffect(() => {
     const fetchUsers = async () => {
       const AllUsers = await getAllUsers()
-      console.log(AllUsers)
       setAllUsers(AllUsers)
     }
   
@@ -38,10 +38,20 @@ export default function HomeRegister(props) {
     })
   }
 
+  const handleDropChange = (event) => {
+    console.log(event.target.value)
+    const value = event.target.value
+    setAccount({
+      ...account,
+      city: value,
+    })
+  }
+
+
+
   const handleSubmit = async (event) => {
     event.preventDefault()
     const userMatch = allUser.find(user => {
-      console.log(user.name)
       return user.name === account.name
     })
     if (!userMatch) {
@@ -78,14 +88,18 @@ export default function HomeRegister(props) {
         value={account.password}
         onChange={handleChange}
           />
+    
           <div>
-      <input
-        placeholder="City"
-        name="city"
-        value={account.city}
-        onChange={handleChange}
-            />
-        </div>
+            <h3>Choose Your City</h3>
+            <div>
+              <select onChange={handleDropChange}>
+                {cityObjectDrop.map(location => {
+           return(<option key={location._id} value={location.City}> {location.City} </option>)
+         })}
+              </select>
+            </div>
+          </div>
+          <br/>
         <div>
           <button type="submit">Submit</button>
         </div>

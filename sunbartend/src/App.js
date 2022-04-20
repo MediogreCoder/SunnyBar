@@ -23,15 +23,22 @@ function App() {
 //holds city info 
   const [allCity, setAllCity] = useState([]);
   const [onecity, setOneCity] = useState('');
-
+  const [allcityname, setAllCityName] = useState([]);
 //fetch all cities
-  
+  const allcity = []
 
 useEffect(() => {
   const fetchAll = async () => {
     const AllCities = await getAll()
-    console.log(AllCities)
+    AllCities.forEach(city => { 
+      // console.log(city.City)
+      allcity.push(city.City)
+    })
+    // console.log(allcity)
+    // console.log(AllCityName)
+    // setAllCityName(AllCityName)
     setAllCity(AllCities)
+   
   }
 
   fetchAll()
@@ -86,7 +93,10 @@ const logUserCity = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<HomeRegister
-        holdname={holdname}     />} />
+              holdname={holdname}
+              allcity={allcity}
+              allCity={allCity}
+            />} />
         <Route path="/login" element={<Login
           setUsername={setUsername}
           setPassword={setPassword}
