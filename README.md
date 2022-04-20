@@ -1,4 +1,5 @@
 # SunnyBar
+Sunny Bar Webiste >>> https://chic-tiramisu-3fb59f.netlify.app/
 
 A website to check the amount of sunlight your city is exposed to annually and assigns you a score based on sunlight metrics from a sunlight by city API.
 
