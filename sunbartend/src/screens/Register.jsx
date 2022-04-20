@@ -93,6 +93,7 @@ export default function HomeRegister(props) {
             <h3>Choose Your City</h3>
             <div>
               <select onChange={handleDropChange}>
+                <option placeholder="cities"></option>
                 {cityObjectDrop.map(location => {
            return(<option key={location._id} value={location.City}> {location.City} </option>)
          })}
