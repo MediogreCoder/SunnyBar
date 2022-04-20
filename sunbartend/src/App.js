@@ -138,7 +138,9 @@ const logUserCity = () => {
               cities={cities}
               showbox={showbox}
               sunlight={sunlight}
-              userid={userid} />}
+              allCity={allCity}
+              userid={userid}
+            />}
               
         />
             <Route path="/All" element={<EveryCity
