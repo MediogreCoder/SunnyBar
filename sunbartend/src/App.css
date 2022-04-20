@@ -106,11 +106,11 @@ body {
   justify-content: center;
 }
 .text {
-  font-size: 4vw;
+  font-size: 3vw;
 }
 .info {
   width: 80%;
-  font-size: 3vw;
+  font-size: 2vw;
   display: inline;
 }
 .loggedUser {
@@ -120,7 +120,12 @@ body {
   font-size: 1vw;
 }
 .cityTitle {
-  font-size: 4rem;
+  font-size: 2.5rem;
+}
+.quotes {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rvw;
 }
 #slider {
   margin-top: 1.5rem;

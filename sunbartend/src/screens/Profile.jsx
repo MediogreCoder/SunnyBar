@@ -85,7 +85,7 @@ export default function LandingPage(props) {
 
       <h1 className="cityTitle">{cities}</h1> 
       <div>
-        <h4>Update City</h4><select onChange={handleDropChange}>
+        <h4>Update City (log in again to see your updated city 🌇</h4><select onChange={handleDropChange}>
                 <option placeholder="cities"></option>
                 {editObjectDrop.map(location => {
            return(<option key={location._id} value={location.City}> {location.City} </option>)
@@ -95,11 +95,15 @@ export default function LandingPage(props) {
       <div>
         <p class="text">Your Sunnyscore is: <span class="scoreDisplay">{sunlight}</span></p>
   
-  
-  
-    <div class="slidercontainer">
+
+        
+      <div class="slidercontainer">
+
       <input type="range" min="300" max="5000" value={sunlight} id="slider"></input>
-    </div>
+      <div class="quotes">
+        <p>Get some sun! 😰</p>  <p>Nice! Sunnyboi is proud. 😎</p>
+       </div>
+        </div>
       </div>
       
    
