@@ -10,6 +10,7 @@ export const getAll = async () => {
   }
 };
 
+
 export const getAllUsers = async () => {
   try {
     const response = await api.get("/users");
@@ -91,6 +92,19 @@ export const getUserID = async (name) => {
     throw error;
   }
 };
+
+export const updateUser = async (id, account) => {
+  try {
+    const response = await api.put(`/users/${id}`, account);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+
+
+
 
 export const deleteUser = async (id) => {
   try {

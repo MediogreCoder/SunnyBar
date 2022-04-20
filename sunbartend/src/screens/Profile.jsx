@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect} from "react";
-import { getProfileCity, getProfileSunlight, deleteUser } from "../services/cities";
+import { getProfileCity, getProfileSunlight, deleteUser, updateUser } from "../services/cities";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import LoggedUser from "./loggedUsers";
@@ -17,6 +17,7 @@ export default function LandingPage(props) {
   const profileCity = props.userCity
   const UserUniqueId = props.userid
   const user = props.holdname
+  const editObjectDrop = props.allCity
 
   
 
@@ -42,6 +43,35 @@ export default function LandingPage(props) {
   }
 
 
+  const [account, setAccount] = useState({
+    city: ''
+  })
+
+
+  const handleDropChange = (event) => {
+    console.log(event.target.value)
+    const value = event.target.value
+    setAccount({
+      ...account,
+      city: value,
+    })
+  }
+
+  const fetchCities = async () => {
+
+    const uCity = await getProfileCity( profileCity )
+    const sunCity = await getProfileSunlight(profileCity)
+    setCities(uCity)
+    setSunlight(sunCity)
+   
+
+  }
+
+  const handleSubmit = async (event) => {
+    await updateUser(UserUniqueId, account)
+    logOut()
+  }
+
    
   return (
   <div>
@@ -53,17 +83,26 @@ export default function LandingPage(props) {
 
         </div>
 
-     <h1 className="cityTitle">{cities}</h1> 
-
+      <h1 className="cityTitle">{cities}</h1> 
       <div>
-
+        <h4>Update City</h4><select onChange={handleDropChange}>
+                <option placeholder="cities"></option>
+                {editObjectDrop.map(location => {
+           return(<option key={location._id} value={location.City}> {location.City} </option>)
+         })}
+              </select><button id="updateButton" onClick={handleSubmit}>Update</button>
+            </div>
+      <div>
         <p class="text">Your Sunnyscore is: <span class="scoreDisplay">{sunlight}</span></p>
+  
+  
   
     <div class="slidercontainer">
       <input type="range" min="300" max="5000" value={sunlight} id="slider"></input>
     </div>
-  </div>
-  
+      </div>
+      
+   
 
         
 
