@@ -1,9 +1,7 @@
 import React from "react";
 import { useState, useEffect} from "react";
 import { getProfileCity, getProfileSunlight } from "../services/cities";
-import { Link } from 'react-router-dom';
-// import { useNavigate } from 'react-router';
-// import LoggedUser from "./loggedUsers";
+
 
 
 
@@ -35,11 +33,6 @@ export default function LandingPage(props) {
     <div class="slidercontainer">
       <input type="range" min="300" max="5000" value={sunlight} id="slider"></input>
     </div>
-    <Link to="/All">
-      <button>
-      Back to Cities
-        </button>
-      </Link>
   </div>
   
 
